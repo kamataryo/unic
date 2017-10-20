@@ -30,4 +30,10 @@ const initialMetaState = {
   commitHash,
 }
 
-export default () => initialMetaState
+/**
+ * [description]
+ * @param  {object} [state=initialMetaState] state
+ * @param  {object} action                   action
+ * @return {object}                          new State
+ */
+export default (state = initialMetaState) => state

@@ -8,6 +8,15 @@ export default class CharBox extends React.Component {
    */
   static propTypes = {
     code: PropTypes.number.isRequired,
+    isCombining: PropTypes.bool,
+  }
+
+  /**
+   * defaultProps
+   * @type {object}
+   */
+  static defaultProps = {
+    isCombining: false,
   }
 
   /**
@@ -25,9 +34,10 @@ export default class CharBox extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { code } = this.props
+    const { code, isCombining } = this.props
+    const pre = isCombining ? '\u00A0' : ''
     const char = String.fromCharCode(code)
 
-    return <div>{char}</div>
+    return <span data-code={ code.toString(16) }>{pre + char}</span>
   }
 }
