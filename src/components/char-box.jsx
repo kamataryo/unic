@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class CharBox extends React.component {
+export default class CharBox extends React.Component {
   /**
    * propTypes
    * @type {object}
@@ -16,7 +16,7 @@ export default class CharBox extends React.component {
    */
   render() {
     const { code } = this.props
-    const char = String.charCodeAt(code)
+    const char = String.fromCharCode(code)
 
     return <div>{char}</div>
   }

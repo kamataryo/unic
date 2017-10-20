@@ -15,7 +15,7 @@ const AppContainer = () => {
   return (
     <Provider store={ store }>
       <main>{'Hello, Unicode!'}</main>
-      <CharBox code={ 12354 } />
+      {/* <CharBox code={ 12354 } /> */}
     </Provider>
   )
 }

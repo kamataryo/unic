@@ -5,16 +5,14 @@
   "main": "./dist/index.html",
   "scripts": {
     "clean": "rimraf dist",
-    "start":
-      "cross-env NODE_ENV=development DEBUG=true webpack-dev-server --progress --colors --inline --watch",
+    "start": "cross-env NODE_ENV=development DEBUG=true webpack-dev-server --progress --colors --inline --watch",
     "build": "cross-env NODE_ENV=production DEBUG=false webpack -p",
     "test": "NODE_ENV=test jest",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "lint": "npm run lint:style && npm run lint:es",
     "lint:style": "stylelint  './src/**/*.js' './src/**/*.jsx'",
     "lint:es": "eslint --cache --ext=jsx --ext=js .",
-    "lint:prettier":
-      "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
+    "lint:prettier": "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -54,6 +52,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
     "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
     "eslint": "^4.9.0",
     "eslint-import-resolver-node": "^0.3.1",
     "eslint-plugin-babel": "^4.1.2",
@@ -82,7 +81,14 @@
     "webpack-dev-server": "^2.9.1"
   },
   "lint-staged": {
-    "*.{js,jsx,json}": ["prettier --write", "git add"]
+    "*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
-  "keywords": ["unicode", "synthesize", "asciiart"]
+  "keywords": [
+    "unicode",
+    "synthesize",
+    "asciiart"
+  ]
 }
