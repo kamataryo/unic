@@ -14,8 +14,9 @@ import CharBox from './char-box'
 const AppContainer = () => {
   return (
     <Provider store={ store }>
-      <main>{'Hello, Unicode!'}</main>
-      {/* <CharBox code={ 12354 } /> */}
+      <main>
+        {'Hello, Unicode!'} <CharBox code={ 12354 } />
+      </main>
     </Provider>
   )
 }

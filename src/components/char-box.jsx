@@ -11,6 +11,16 @@ export default class CharBox extends React.Component {
   }
 
   /**
+   * shouldComponentUpdate
+   * @param  {object} nextProps next props
+   * @param  {object} nextState next state
+   * @return {boolean}          should component update
+   */
+  shouldComponentUpdate(nextProps) {
+    this.props.code !== nextProps.code
+  }
+
+  /**
    * render
    * @return {ReactElement|null|false} render a React element.
    */
